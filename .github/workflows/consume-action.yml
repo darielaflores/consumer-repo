@@ -2,7 +2,8 @@ name: Consume Custom Action
 
 on:
   push:
-   branches: main
+   branches: 
+     -main
 
 jobs:
 
@@ -21,7 +22,7 @@ jobs:
         uses: darielaflores/branch-validator-action@v1
 
         with:
-          branch-name: "si"
+          branch-name: ${{ github.ref_name }}
           version: "1.0.0"
 
       # CONSUMIR OUTPUTS
