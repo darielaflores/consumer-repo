@@ -20,7 +20,7 @@ jobs:
         uses: darielaflores/branch-validator-action@v1
 
         with:
-          branch-name: ${{ github.ref_name }}
+          branch-name: ""
           version: "1.0.0"
 
       # CONSUMIR OUTPUTS
