@@ -2,6 +2,7 @@ name: Consume Custom Action
 
 on:
   push:
+   branches: main
 
 jobs:
 
