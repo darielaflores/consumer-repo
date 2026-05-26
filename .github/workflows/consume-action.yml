@@ -1,0 +1,32 @@
+name: Consume Custom Action
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+
+  validate-branch:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Validate branch
+        id: validator
+
+        uses: darielaflores/branch-validator-action@v1
+
+        with:
+          branch-name: ${{ github.ref_name }}
+
+      # 📤 CONSUMIR OUTPUTS
+      - name: Show outputs
+        run: |
+          echo "Valid: ${{ steps.validator.outputs.is-valid }}"
+          echo "Type: ${{ steps.validator.outputs.branch-type }}"
+          echo "Message: ${{ steps.validator.outputs.message }}"
