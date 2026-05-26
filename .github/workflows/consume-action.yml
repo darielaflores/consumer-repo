@@ -23,8 +23,9 @@ jobs:
 
         with:
           branch-name: ${{ github.ref_name }}
+          version: "1.0.0"
 
-      # 📤 CONSUMIR OUTPUTS
+      # CONSUMIR OUTPUTS
       - name: Show outputs
         run: |
           echo "Valid: ${{ steps.validator.outputs.is-valid }}"
